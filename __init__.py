@@ -34,26 +34,30 @@ class BF:
         i = 0
         while i < len(command):
             t = command[i]
-            if(t == '+'):
+            if t == '+' :
                 self.add()
-            if(t == '-'):
+            if t == '-' :
                 self.subtract()
-            if(t == '>'):
+            if t == '>' :
                 self.right()
-            if(t == '<'):
+            if t == '<' :
                 self.left()
-            if(t== '['):
+            if t == '[' :
                 k = self.findMatch(i,command)
                 while self.data[self.index] != 0 :
-                    #print(self.data)
                     self.compile(command[i+1:k])
                 i = k
+            if t == ',' :
+                self.data[self.index] = ord(input())
+            if t == '.' :
+                print(chr(self.data[self.index]))
+                
                 
             i += 1
             
 BF1 = BF()
 
-BF1.compile(input("Input : "))
+BF1.compile(input("Command : "))
 
 print(BF.data)
         
