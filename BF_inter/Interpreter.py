@@ -50,25 +50,7 @@ class BF:
             if t == ',' :
                 self.data[self.index] = ord(input())
             if t == '.' :
-                print(chr(self.data[self.index]),end='')
+                print(chr(self.data[self.index]))
                 
                 
             i += 1
-            
-BF1 = BF()
-
-command = ""
-line = ""
-
-while True:
-    line = input()
-    if line:
-        command += line
-    else:
-        break
-
-
-BF1.compile(command)
-
-print("\n\n"+str(BF.data))
-        
