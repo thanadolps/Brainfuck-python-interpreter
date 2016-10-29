@@ -10,7 +10,8 @@ class BF:
     def add(self):
         self.data[self.index] += 1
     def subtract(self):
-        self.data[self.index] -= 1
+        if self.data[self.index] > 0:
+            self.data[self.index] -= 1
     def right(self):
         if self.index + 1 >= len(self.data):
             self.data.append(0)
